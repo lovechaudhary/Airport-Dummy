@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Airpots</h2>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Flight Number</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Departed At</th>
+            <th scope="col">Arrives At</th>
+            <th scope="col">Latitude</th>
+            <th scope="col">Longitude</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let current of currentAirports">
+          <tr>
+            <th scope="row">{{ current.flightNumber }}</th>
+            <td>{{ current.from }}</td>
+            <td>{{ current.to }}</td>
+            <td>{{ current.departedAt }}</td>
+            <td>{{ current.arrivesAt }}</td>
+            <td>{{ current.latitude }}</td>
+            <td>{{ current.longitude }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

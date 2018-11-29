@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Airpots</h2>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Airport Code/Identifier</th>
+            <th scope="col">Airport Name</th>
+            <th scope="col">Latitude</th>
+            <th scope="col">Longitude</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let airport of airports">
+          <tr>
+            <th scope="row">{{ airport.icao }}</th>
+            <td>{{ airport.name }}</td>
+            <td>{{ airport.latitude }}</td>
+            <td>{{ airport.longitude }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
