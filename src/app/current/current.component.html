@@ -1,7 +1,7 @@
 <div class="container">
-  <h2>Airpots</h2>
+  <h2>Current Flight Status</h2>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -10,8 +10,7 @@
             <th scope="col">To</th>
             <th scope="col">Departed At</th>
             <th scope="col">Arrives At</th>
-            <th scope="col">Latitude</th>
-            <th scope="col">Longitude</th>
+            <th scope="col">Maps</th>
           </tr>
         </thead>
         <tbody *ngFor="let current of currentAirports">
@@ -21,11 +20,17 @@
             <td>{{ current.to }}</td>
             <td>{{ current.departsAt }}</td>
             <td>{{ current.arrivesAt }}</td>
-            <td>{{ current.latitude }}</td>
-            <td>{{ current.longitude }}</td>
+            <td>
+              <button
+                (click)="FlightsOpenMap(current.latitude, current.longitude)"
+              >
+                Map
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
+    <div class="col-md-4" id="a"><div id="map"></div></div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Airpots</h2>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -9,6 +9,7 @@
             <th scope="col">Airport Name</th>
             <th scope="col">Latitude</th>
             <th scope="col">Longitude</th>
+            <th scope="col">Maps</th>
           </tr>
         </thead>
         <tbody *ngFor="let airport of airports">
@@ -17,9 +18,15 @@
             <td>{{ airport.name }}</td>
             <td>{{ airport.latitude }}</td>
             <td>{{ airport.longitude }}</td>
+            <td>
+              <button (click)="openMap(airport.latitude, airport.longitude)">
+                Map
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
+    <div class="col-md-4"><div id="map"></div></div>
   </div>
 </div>
